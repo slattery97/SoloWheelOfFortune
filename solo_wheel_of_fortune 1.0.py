@@ -188,7 +188,6 @@ with open('phrases.txt') as phraseList:
         print(':::::::::::::::::::::::::::::::::::::::::: ROUND ',roundNumber+1,' of 4 ::')
         cent = int((56-len(phrase))/2-1)
         print(str('::')+str(' ')*cent+phraseHid+str(' ')*cent+str('::'))
-        print(str('::')+str(' ')*cent+phrase+str(' ')*cent+str('::'))
         print('::::::::::::::::::::::::::::::::::::::::::::::::::::::::::')
         print(str('::  ')+consList+str('   ::   ')+vowsList
               +str('   ::          $')+str(roundCash[roundNumber])+str(' ::'))

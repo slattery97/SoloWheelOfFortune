@@ -99,6 +99,13 @@ with open('phrases.txt') as phraseList:
             print(str("I'm sorry, there are no ")+str(consChoice).capitalize()
                       +str("'s."), sep='')
             print(' ')
+            # append consonant to list of used consonants
+            usedCons.append(consChoice)
+            # remove used consonant from available consonants string
+            for i in range(len(consList)):
+                if (consChoice == consList[i]) or (consChoice.capitalize() == consList[i]): 
+                    consList = str(consList[: i]  + ' ' +
+                                   consList[i + 1 :])
             return roundCash, phraseHidNew, usedCons, consList, roundNumber
         else:
             cashEarned = int(consMatches) * int(space)
@@ -150,7 +157,14 @@ with open('phrases.txt') as phraseList:
         if phraseHidNew == phraseHid:
             print(str("I'm sorry, there are no ")+str(vowsChoice).capitalize()
                       +str("'s."), sep='')
-            print(' ')
+            print(' ')# append vowel to list of used vowels
+            usedVows.append(vowsChoice)
+            # remove used vowel from available vowels string
+            for i in range(len(vowsList)):
+                if (vowsChoice == vowsList[i]) or (vowsChoice.capitalize() == vowsList[i]): 
+                    vowsList = str(vowsList[: i]  + ' ' +
+                                   vowsList[i + 1 :])
+            
             return roundCash, phraseHidNew, usedVows, vowsList, roundNumber
         else:
             print('There are ' + str(consMatches) + ' ' + str(vowsChoice) + "'s")
